@@ -102,13 +102,14 @@ labelRect = CGRectMake(10, 0, stringWidth, stringHeight);
 </code></pre>  }<br>  self.label4Title.frame = labelRect;<br>  self.topBar.contentSize = CGSizeMake(self.topBar.frame.size.width, labelRect.size.height+20);<br>  self.label4Title.alpha = 0.0;<br>  self.label4Title.hidden = NO;<br>  self.label4Title.text = labelText;<br>  self.label4Title.textColor = textColor;<br>  [UIView animateWithDuration:0.4 animations:^{<pre><code>self.label4Title.alpha = 1.0;
 </code></pre>  }];<br>  [UIView animateWithDuration:0.4 animations:^{<pre><code>self.label4Title.alpha = 1.0;
 </code></pre>  } completion:^(BOOL finished) {<pre><code>[self beginScrollWithTimeOfTimer:_timeInterval4Label];
-</code></pre>  }];<br>  [self setNeedsDisplay];<br>}<br>源码地址下载<a href="https://github.com/whpanda/StatusBar" target="_blank" rel="external">github</a></li>
+</code></pre>  }];<br>  [self setNeedsDisplay];<br>}</li>
 </ul>
+<p>使用起来相当简单 [WHPStatusBar showSuccessWithStatus:@”显示消息”];这一句就好<br>源码地址下载<a href="https://github.com/whpanda/StatusBar" target="_blank" rel="external">github</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="ciop9vuz900005r5xcz3kjlfg" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="ciop9z3yb00006n5xmddmc0f7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,7 +146,7 @@ labelRect = CGRectMake(10, 0, stringWidth, stringHeight);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="ciop9vuzf00015r5xixvj9pf5" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="ciop9z3yh00016n5xb26fetyo" class="article-share-link">Share</a>
       
       
     </footer>
