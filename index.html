@@ -91,25 +91,49 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>利用状态栏来提示和显示状态，字数太多可以滚动显示完之后消失</p>
-<ul>
-<li>(void)showWithStatus:(NSString <em>)status barColor:(UIColor</em>)barColor textColor:(UIColor*)textColor{<br>  if (_isshowing) {<pre><code>return;
-</code></pre>  }<br>  _isshowing = YES;<br>  if(!self.superview)<pre><code>[self.overlayWindow addSubview:self];
-</code></pre>  [self.overlayWindow setHidden:NO];<br>  [self.topBar setHidden:NO];<br>  self.topBar.backgroundColor = barColor;<br>  NSString *labelText = status;<br>  CGRect labelRect = CGRectZero;<br>  CGFloat stringWidth = 0;<br>  CGFloat stringHeight = 0;<br>  if(labelText) {<pre><code>CGSize size = [labelText boundingRectWithSize:CGSizeMake((self.topBar.frame.size.width-20), 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.label4Title.font} context:nil].size;
-stringWidth = size.width;
-stringHeight = size.height;
-_timeInterval4Label = stringHeight/10;
-labelRect = CGRectMake(10, 0, stringWidth, stringHeight);
-</code></pre>  }<br>  self.label4Title.frame = labelRect;<br>  self.topBar.contentSize = CGSizeMake(self.topBar.frame.size.width, labelRect.size.height+20);<br>  self.label4Title.alpha = 0.0;<br>  self.label4Title.hidden = NO;<br>  self.label4Title.text = labelText;<br>  self.label4Title.textColor = textColor;<br>  [UIView animateWithDuration:0.4 animations:^{<pre><code>self.label4Title.alpha = 1.0;
-</code></pre>  }];<br>  [UIView animateWithDuration:0.4 animations:^{<pre><code>self.label4Title.alpha = 1.0;
-</code></pre>  } completion:^(BOOL finished) {<pre><code>[self beginScrollWithTimeOfTimer:_timeInterval4Label];
-</code></pre>  }];<br>  [self setNeedsDisplay];<br>}</li>
-</ul>
-<p>使用起来相当简单 [WHPStatusBar showSuccessWithStatus:@”显示消息”];这一句就好<br>源码地址下载<a href="https://github.com/whpanda/StatusBar" target="_blank" rel="external">github</a></p>
+<pre><code>- (void)showWithStatus:(NSString *)status barColor:(UIColor*)barColor textColor:(UIColor*)textColor{
+if (_isshowing) {
+    return;
+}
+_isshowing = YES;
+if(!self.superview)
+    [self.overlayWindow addSubview:self];
+[self.overlayWindow setHidden:NO];
+[self.topBar setHidden:NO];
+self.topBar.backgroundColor = barColor;
+NSString *labelText = status;
+CGRect labelRect = CGRectZero;
+CGFloat stringWidth = 0;
+CGFloat stringHeight = 0;
+if(labelText) {
+    CGSize size = [labelText boundingRectWithSize:CGSizeMake((self.topBar.frame.size.width-20), 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.label4Title.font} context:nil].size;
+    stringWidth = size.width;
+    stringHeight = size.height;
+    _timeInterval4Label = stringHeight/10;
+    labelRect = CGRectMake(10, 0, stringWidth, stringHeight);
+}
+self.label4Title.frame = labelRect;
+self.topBar.contentSize = CGSizeMake(self.topBar.frame.size.width, labelRect.size.height+20);
+self.label4Title.alpha = 0.0;
+self.label4Title.hidden = NO;
+self.label4Title.text = labelText;
+self.label4Title.textColor = textColor;
+[UIView animateWithDuration:0.4 animations:^{
+    self.label4Title.alpha = 1.0;
+}];
+[UIView animateWithDuration:0.4 animations:^{
+    self.label4Title.alpha = 1.0;
+} completion:^(BOOL finished) {
+    [self beginScrollWithTimeOfTimer:_timeInterval4Label];
+}];
+[self setNeedsDisplay];}
+</code></pre><p>使用起来相当简单 [WHPStatusBar showSuccessWithStatus:@”显示消息”];这一句就好</p>
+<p>源码地址下载<a href="https://github.com/whpanda/StatusBar" target="_blank" rel="external">github</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="ciop9z3yb00006n5xmddmc0f7" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="ciopad0x80001945xouvung4p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -146,7 +170,7 @@ labelRect = CGRectMake(10, 0, stringWidth, stringHeight);
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="ciop9z3yh00016n5xb26fetyo" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="ciopad0x00000945x5obmo3kz" class="article-share-link">Share</a>
       
       
     </footer>
