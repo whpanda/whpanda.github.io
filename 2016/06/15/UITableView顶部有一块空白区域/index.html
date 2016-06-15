@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的第一篇博客终于弄好了 | 尼玛拉雅我的开发笔记</title>
+  <title>UITableView顶部有一块空白区域 | 尼玛拉雅我的开发笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一篇博客纪念一下，弄了好几天，用hexo 和 github 做的，只需要购买域名，不需要买服务器，直接用github的就可以了，都是静态界面，后台和数据库都是大材小用，用这一篇测试发布！">
+  <meta name="description" content="上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客终于弄好了">
-<meta property="og:url" content="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/index.html">
+<meta property="og:title" content="UITableView顶部有一块空白区域">
+<meta property="og:url" content="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/index.html">
 <meta property="og:site_name" content="尼玛拉雅我的开发笔记">
-<meta property="og:description" content="第一篇博客纪念一下，弄了好几天，用hexo 和 github 做的，只需要购买域名，不需要买服务器，直接用github的就可以了，都是静态界面，后台和数据库都是大材小用，用这一篇测试发布！">
-<meta property="og:updated_time" content="2016-05-24T09:12:02.000Z">
+<meta property="og:description" content="上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让">
+<meta property="og:updated_time" content="2016-06-15T02:43:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇博客终于弄好了">
-<meta name="twitter:description" content="第一篇博客纪念一下，弄了好几天，用hexo 和 github 做的，只需要购买域名，不需要买服务器，直接用github的就可以了，都是静态界面，后台和数据库都是大材小用，用这一篇测试发布！">
+<meta name="twitter:title" content="UITableView顶部有一块空白区域">
+<meta name="twitter:description" content="上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让">
   
     <link rel="alternate" href="/atom.xml" title="尼玛拉雅我的开发笔记" type="application/atom+xml">
   
@@ -67,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-我的第一篇博客终于弄好了" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-UITableView顶部有一块空白区域" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/24/我的第一篇博客终于弄好了/" class="article-date">
-  <time datetime="2016-05-24T09:02:09.000Z" itemprop="datePublished">2016-05-24</time>
+    <a href="/2016/06/15/UITableView顶部有一块空白区域/" class="article-date">
+  <time datetime="2016-06-15T02:32:21.000Z" itemprop="datePublished">2016-06-15</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客终于弄好了
+      UITableView顶部有一块空白区域
     </h1>
   
 
@@ -89,12 +89,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第一篇博客纪念一下，弄了好几天，用hexo 和 github 做的，只需要购买域名，不需要买服务器，直接用github的就可以了，都是静态界面，后台和数据库都是大材小用，用这一篇测试发布！</p>
+        <p>上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让它不要自动调整就可以了，加一句代码就ok了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.automaticallyAdjustsScrollViewInsets = NO;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="cipg9x0nb0002iebw8n41plib" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="cipg9x0n60000iebwtrh98iby" class="article-share-link">Share</a>
       
       
     </footer>
@@ -103,15 +103,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/27/statusBar状态栏消息滚动显示控件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          statusBar状态栏消息滚动显示控件
-        
-      </div>
-    </a>
   
+    <a href="/2016/05/27/statusBar状态栏消息滚动显示控件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">statusBar状态栏消息滚动显示控件</div>
+    </a>
   
 </nav>
 

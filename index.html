@@ -68,6 +68,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-UITableView顶部有一块空白区域" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/15/UITableView顶部有一块空白区域/" class="article-date">
+  <time datetime="2016-06-15T02:32:21.000Z" itemprop="datePublished">2016-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/15/UITableView顶部有一块空白区域/">UITableView顶部有一块空白区域</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让它不要自动调整就可以了，加一句代码就ok了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.automaticallyAdjustsScrollViewInsets = NO;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="cipg9x0n60000iebwtrh98iby" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-statusBar状态栏消息滚动显示控件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/27/statusBar状态栏消息滚动显示控件/" class="article-date">
@@ -133,7 +170,7 @@ self.label4Title.textColor = textColor;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="ciopad0x80001945xouvung4p" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="cipg9x0na0001iebwygd7b8o1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +207,7 @@ self.label4Title.textColor = textColor;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="ciopad0x00000945x5obmo3kz" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="cipg9x0nb0002iebw8n41plib" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +234,7 @@ self.label4Title.textColor = textColor;
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
     </div>
   </div>
 
@@ -208,6 +245,10 @@ self.label4Title.textColor = textColor;
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/15/UITableView顶部有一块空白区域/">UITableView顶部有一块空白区域</a>
+          </li>
         
           <li>
             <a href="/2016/05/27/statusBar状态栏消息滚动显示控件/">statusBar状态栏消息滚动显示控件</a>
