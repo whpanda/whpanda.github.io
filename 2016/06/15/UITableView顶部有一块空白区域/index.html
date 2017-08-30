@@ -6,11 +6,13 @@
   <title>UITableView顶部有一块空白区域 | 尼玛拉雅我的开发笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让">
+<meta name="keywords" content="UITableView">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UITableView顶部有一块空白区域">
 <meta property="og:url" content="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/index.html">
 <meta property="og:site_name" content="尼玛拉雅我的开发笔记">
 <meta property="og:description" content="上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-06-15T02:54:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITableView顶部有一块空白区域">
@@ -61,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nimalaya.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nimalaya.com"></form>
       </div>
     </div>
   </div>
@@ -89,12 +91,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让它不要自动调整就可以了，加一句代码就ok了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.automaticallyAdjustsScrollViewInsets = NO;</span><br></pre></td></tr></table></figure></p>
+        <p>上个项目一直用代码写控件，所以没有发现这个问题，今天没事写个h5的东西，用到xib，发现UITableView最上面一直有一块空白区域，搜了资料发现，iOS 7 viewcontroller新增属性automaticallyAdjustsScrollViewInsets，即是否根据按所在界面的navigationbar与tabbar的高度，自动调整scrollview的 inset,设置为no，让它不要自动调整就可以了，加一句代码就ok了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.automaticallyAdjustsScrollViewInsets = NO;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="cipgadsj90000l7bwoezh5rw7" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="cj6ydm3830001pwbwwxim6l56" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableView/">UITableView</a></li></ul>
@@ -104,6 +106,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/08/30/AFNetWork支持https，不验证证书/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2016/05/27/statusBar状态栏消息滚动显示控件/" id="article-nav-older" class="article-nav-link-wrap">
@@ -146,7 +157,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
     </div>
   </div>
 
@@ -157,6 +168,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/08/30/AFNetWork支持https，不验证证书/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2016/06/15/UITableView顶部有一块空白区域/">UITableView顶部有一块空白区域</a>
@@ -182,7 +197,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 少林寺驻武当山办事处大神父王喇嘛,恩~就叫这个名吧<br>
+      &copy; 2017 少林寺驻武当山办事处大神父王喇嘛,恩~就叫这个名吧<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
