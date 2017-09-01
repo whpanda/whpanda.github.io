@@ -69,6 +69,35 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-webView打开https,不验证证书" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/01/webView打开https,不验证证书/" class="article-date">
+  <time datetime="2017-09-01T02:34:31.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="webView打开https-不验证证书"><a href="#webView打开https-不验证证书" class="headerlink" title="webView打开https,不验证证书"></a>webView打开https,不验证证书</h1><p>标签（空格分隔）： webview https</p>
+<hr>
+<p>只需要条件一个类方法即可,这个方法在整个app中任何一个文件实现都可以，我是做sdk遇到这个问题，demo中webview https打不开，在集成app中竟然可以，最好发现，app中有类写了这两句代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@implementation NSURLRequest (NSURLRequestWithIgnoreSSL)</div><div class="line"></div><div class="line">+ (BOOL)allowsAnyHTTPSCertificateForHost:(NSString *)host</div><div class="line">&#123;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nimalaya.com/2017/09/01/webView打开https,不验证证书/" data-id="cj719ry0w0007rlbwlgempwa6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-AFNetWork支持https，不验证证书" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/30/AFNetWork支持https，不验证证书/" class="article-date">
@@ -91,7 +120,7 @@ _sharedInstance.securityPolicy = securityPolicy;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2017/08/30/AFNetWork支持https，不验证证书/" data-id="cj6ydm37z0000pwbw36jkzolr" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2017/08/30/AFNetWork支持https，不验证证书/" data-id="cj719ry0d0000rlbwf8znwn9d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +157,7 @@ _sharedInstance.securityPolicy = securityPolicy;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="cj6ydm3830001pwbwwxim6l56" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="cj719ry0h0001rlbwwzdfe4nz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableView/">UITableView</a></li></ul>
@@ -205,7 +234,7 @@ self.label4Title.textColor = textColor;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="cj6ydm38a0004pwbw9d6tgpag" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="cj719ry0t0004rlbwsldlxorm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/statusBar/">statusBar</a></li></ul>
@@ -244,7 +273,7 @@ self.label4Title.textColor = textColor;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="cj6ydm3850002pwbwr3zqshwd" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="cj719ry0u0005rlbwzja112t6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +314,7 @@ self.label4Title.textColor = textColor;
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
     </div>
   </div>
 
@@ -296,6 +325,10 @@ self.label4Title.textColor = textColor;
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/09/01/webView打开https,不验证证书/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2017/08/30/AFNetWork支持https，不验证证书/">(no title)</a>
