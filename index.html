@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(+JSONKeyMapper)keyMapper&#123;</div><div class="line"><span class="keyword">return</span> [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&#123;<span class="string">@"自己设置的model属性"</span>:<span class="string">@"服务器返回的model属性"</span>&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">+(JSONKeyMapper)keyMapper&#123;</div><div class="line"><span class="keyword">return</span> [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&#123;<span class="string">@"自己设置的model属性"</span>:<span class="string">@"服务器返回的model属性"</span>&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>

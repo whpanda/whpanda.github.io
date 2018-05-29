@@ -5,18 +5,18 @@
   
   <title>jsonmodel中出现系统关键词处理 | 尼玛拉雅我的开发笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法123(+JSONKeyMapper)keyMapper&amp;#123;return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&amp;#123;@&quot;自己设置的model属性&quot;:@&quot;">
+  <meta name="description" content="服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法123+(JSONKeyMapper)keyMapper&amp;#123;return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&amp;#123;@&quot;自己设置的model属性&quot;:@&quot;">
 <meta name="keywords" content="jsonmodel 系统关键词">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jsonmodel中出现系统关键词处理">
 <meta property="og:url" content="http://nimalaya.com/2018/05/29/jsonmodel中出现系统关键词处理/index.html">
 <meta property="og:site_name" content="尼玛拉雅我的开发笔记">
-<meta property="og:description" content="服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法123(+JSONKeyMapper)keyMapper&amp;#123;return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&amp;#123;@&quot;自己设置的model属性&quot;:@&quot;">
+<meta property="og:description" content="服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法123+(JSONKeyMapper)keyMapper&amp;#123;return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&amp;#123;@&quot;自己设置的model属性&quot;:@&quot;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-29T08:44:16.872Z">
+<meta property="og:updated_time" content="2018-05-29T08:46:24.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsonmodel中出现系统关键词处理">
-<meta name="twitter:description" content="服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法123(+JSONKeyMapper)keyMapper&amp;#123;return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&amp;#123;@&quot;自己设置的model属性&quot;:@&quot;">
+<meta name="twitter:description" content="服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法123+(JSONKeyMapper)keyMapper&amp;#123;return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&amp;#123;@&quot;自己设置的model属性&quot;:@&quot;">
   
     <link rel="alternate" href="/atom.xml" title="尼玛拉雅我的开发笔记" type="application/atom+xml">
   
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(+JSONKeyMapper)keyMapper&#123;</div><div class="line"><span class="keyword">return</span> [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&#123;<span class="string">@"自己设置的model属性"</span>:<span class="string">@"服务器返回的model属性"</span>&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">+(JSONKeyMapper)keyMapper&#123;</div><div class="line"><span class="keyword">return</span> [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&#123;<span class="string">@"自己设置的model属性"</span>:<span class="string">@"服务器返回的model属性"</span>&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
