@@ -69,6 +69,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Cordova iOS使用心得（爬坑） " class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/29/Cordova iOS使用心得（爬坑） /" class="article-date">
+  <time datetime="2018-05-29T09:02:02.000Z" itemprop="datePublished">2018-05-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/29/Cordova iOS使用心得（爬坑） /">Cordova iOS使用心得（爬坑）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>现在做个很老很老的项目，整个工程只有一个Controller，能想到这得多老的项目了吧，要集成Cordova，之前js交互实在很差，写一点爬坑过程<br>1、项目如何不是刚开始就集成Cordova，不建议使用官网那个教程，试了下，没成功<br>2、使用官网教程新建demo，自己工程需要哪些插件，用官网命令在demo里面装上，platform里面www复制进项目<br>然后，将下面js原名称Run Script修改为Copy www directory;然后将show env那个选项去掉，最后将下面的代码字段复制到build phases：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2&gt;/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2&gt;/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH &amp;&amp; node cordova/lib/copy-www-build-step.js</div></pre></td></tr></table></figure></p>
+<p>3、将config.xml拖到工程<br>4、自己的Controller继承CDVViewController,创建的时候这样写，如果www本地调试的话<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">TestViewController *test = [[TestViewController alloc]init];</div><div class="line">test.wwwFolderName = @&quot;www&quot;;</div><div class="line">test.startPage = @&quot;index.html&quot;;</div></pre></td></tr></table></figure></p>
+<p>如果www放服务器，可以这样写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">TestViewController *test = [[TestViewController alloc]init];</div><div class="line">test.wwwFolderName = @&quot;&quot;;</div><div class="line">test.startPage = @&quot;http://localhost/www/index.html&quot;;</div></pre></td></tr></table></figure></p>
+<p>我这个放在我本地搭建的服务器了，所以写localhost，改成自己服务器地址即可，切记：这样写，是打开safary打开的，需要在config.xml中修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!--    &lt;allow-intent href=&quot;http://*/*&quot; /&gt;--&gt;</div><div class="line">&lt;!--    &lt;allow-intent href=&quot;https://*/*&quot; /&gt;--&gt;</div><div class="line">    &lt;allow-navigation href=&quot;http://*/*&quot; /&gt;</div><div class="line">    &lt;allow-navigation href=&quot;https://*/*&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<p>这样基本可跑了。用的话去看官方怎么用就可以了，自定义插件一定要在config.xml中配上才行，例如我这个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;feature name=&quot;MyPlugin&quot;&gt;</div><div class="line">    &lt;param name=&quot;ios-package&quot; value=&quot;MyPlugin&quot; /&gt;</div><div class="line">    &lt;param name=&quot;onload&quot; value=&quot;true&quot; /&gt;</div><div class="line">&lt;/feature&gt;</div></pre></td></tr></table></figure></p>
+<p>凭印象写，就这样</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nimalaya.com/2018/05/29/Cordova iOS使用心得（爬坑） /" data-id="cjhrh6sr60000rcbwrqvb0pmo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jsonmodel中出现系统关键词处理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/29/jsonmodel中出现系统关键词处理/" class="article-date">
@@ -96,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2018/05/29/jsonmodel中出现系统关键词处理/" data-id="cjhrfr6mq0000yxbw2bqrig96" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2018/05/29/jsonmodel中出现系统关键词处理/" data-id="cjhrh6src0003rcbwg3ozi77n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonmodel-系统关键词/">jsonmodel 系统关键词</a></li></ul>
@@ -128,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2017/09/12/swift automaticallyAdjustsScrollViewInsets空白间距问题/" data-id="cjhrfl48e0004vsbww3ey6rt1" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2017/09/12/swift automaticallyAdjustsScrollViewInsets空白间距问题/" data-id="cjhrh6srf0006rcbwsu9h4v11" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2017/09/01/webView打开https,不验证证书/" data-id="cjhrfl48f0005vsbw4sq3sl5p" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2017/09/01/webView打开https,不验证证书/" data-id="cjhrh6srg0008rcbwipdc4kop" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +231,7 @@ _sharedInstance.securityPolicy = securityPolicy;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2017/08/30/AFNetWork支持https，不验证证书/" data-id="cjhrfl4850000vsbwvygynq3p" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2017/08/30/AFNetWork支持https，不验证证书/" data-id="cjhrh6sra0001rcbwx2xdsq51" class="article-share-link">Share</a>
       
       
     </footer>
@@ -226,7 +268,7 @@ _sharedInstance.securityPolicy = securityPolicy;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="cjhrfl4890001vsbw3fniny5q" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="cjhrh6srb0002rcbwjh1f1frz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableView/">UITableView</a></li></ul>
@@ -303,7 +345,7 @@ self.label4Title.textColor = textColor;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="cjhrfl48b0002vsbwt3dfhyku" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="cjhrh6srf0005rcbwjkmizibn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/statusBar/">statusBar</a></li></ul>
@@ -342,7 +384,7 @@ self.label4Title.textColor = textColor;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="cjhrfl48g0007vsbwmzgxqyxi" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="cjhrh6srh000arcbw1n45u861" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,6 +438,10 @@ self.label4Title.textColor = textColor;
       <ul>
         
           <li>
+            <a href="/2018/05/29/Cordova iOS使用心得（爬坑） /">Cordova iOS使用心得（爬坑）</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/29/jsonmodel中出现系统关键词处理/">jsonmodel中出现系统关键词处理</a>
           </li>
         
@@ -409,10 +455,6 @@ self.label4Title.textColor = textColor;
         
           <li>
             <a href="/2017/08/30/AFNetWork支持https，不验证证书/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/15/UITableView顶部有一块空白区域/">UITableView顶部有一块空白区域</a>
           </li>
         
       </ul>
