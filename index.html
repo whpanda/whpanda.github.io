@@ -69,6 +69,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jsonmodel中出现系统关键词处理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/29/jsonmodel中出现系统关键词处理/" class="article-date">
+  <time datetime="2018-05-29T08:34:18.000Z" itemprop="datePublished">2018-05-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/29/jsonmodel中出现系统关键词处理/">jsonmodel中出现系统关键词处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(+JSONKeyMapper)keyMapper&#123;</div><div class="line"><span class="keyword">return</span> [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&#123;<span class="string">@"自己设置的model属性"</span>:<span class="string">@"服务器返回的model属性"</span>&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nimalaya.com/2018/05/29/jsonmodel中出现系统关键词处理/" data-id="cjhrfr6mq0000yxbw2bqrig96" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonmodel-系统关键词/">jsonmodel 系统关键词</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-swift automaticallyAdjustsScrollViewInsets空白间距问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/12/swift automaticallyAdjustsScrollViewInsets空白间距问题/" class="article-date">
@@ -325,7 +364,7 @@ self.label4Title.textColor = textColor;
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statusBar/">statusBar</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonmodel-系统关键词/">jsonmodel 系统关键词</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statusBar/">statusBar</a></li></ul>
     </div>
   </div>
 
@@ -335,7 +374,7 @@ self.label4Title.textColor = textColor;
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/statusBar/" style="font-size: 10px;">statusBar</a>
+      <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/jsonmodel-系统关键词/" style="font-size: 10px;">jsonmodel 系统关键词</a> <a href="/tags/statusBar/" style="font-size: 10px;">statusBar</a>
     </div>
   </div>
 
@@ -344,7 +383,7 @@ self.label4Title.textColor = textColor;
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
     </div>
   </div>
 
@@ -355,6 +394,10 @@ self.label4Title.textColor = textColor;
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/29/jsonmodel中出现系统关键词处理/">jsonmodel中出现系统关键词处理</a>
+          </li>
         
           <li>
             <a href="/2017/09/12/swift automaticallyAdjustsScrollViewInsets空白间距问题/">(no title)</a>
@@ -370,10 +413,6 @@ self.label4Title.textColor = textColor;
         
           <li>
             <a href="/2016/06/15/UITableView顶部有一块空白区域/">UITableView顶部有一块空白区域</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/27/statusBar状态栏消息滚动显示控件/">statusBar状态栏消息滚动显示控件</a>
           </li>
         
       </ul>
