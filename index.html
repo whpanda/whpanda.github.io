@@ -69,6 +69,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-cordova加载服务器H5页面，js放本地" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/31/cordova加载服务器H5页面，js放本地/" class="article-date">
+  <time datetime="2018-05-31T07:16:11.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/31/cordova加载服务器H5页面，js放本地/">cordova加载服务器H5页面，js放本地</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先需要改造一下cordova文件源码<br>CDVURLProtocol.m这个文件<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//重写方法</span></div><div class="line">-(<span class="keyword">void</span>)startLoading</div><div class="line">&#123;</div><div class="line">    <span class="comment">//处理自定义标签 ，并实现内嵌本地资源</span></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"startLoading"</span>);</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, <span class="keyword">super</span>.request.URL);</div><div class="line">    <span class="built_in">NSString</span> *url=<span class="keyword">super</span>.request.URL.resourceSpecifier;<span class="comment">// 得到//image1.png"</span></div><div class="line">    <span class="comment">//去掉 //前缀（）</span></div><div class="line">    url=[url substringFromIndex:<span class="number">2</span>];<span class="comment">//image1.png</span></div><div class="line">    <span class="built_in">NSString</span> *path=  [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:url ofType:<span class="literal">nil</span>];<span class="comment">//这里是获取本地资源路径 如 ：png,js 等</span></div><div class="line">    <span class="keyword">if</span> (!path) &#123;</div><div class="line">        [<span class="keyword">self</span> sendResponseWithResponseCode:<span class="number">401</span> data:<span class="literal">nil</span> mimeType:<span class="literal">nil</span>];<span class="comment">//重要</span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//根据路径获取MIMEType   （以下函数方法需要添加.h文件的引用，）</span></div><div class="line">    <span class="comment">// Get the UTI from the file's extension:</span></div><div class="line">    <span class="built_in">CFStringRef</span> pathExtension = (__bridge_retained <span class="built_in">CFStringRef</span>)[path pathExtension];</div><div class="line">    <span class="built_in">CFStringRef</span> type = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, pathExtension, <span class="literal">NULL</span>);</div><div class="line">    <span class="built_in">CFRelease</span>(pathExtension);</div><div class="line">    <span class="comment">// The UTI can be converted to a mime type:</span></div><div class="line">    <span class="built_in">NSString</span> *mimeType = (__bridge_transfer <span class="built_in">NSString</span> *)UTTypeCopyPreferredTagWithClass(type, kUTTagClassMIMEType);</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (type != <span class="literal">NULL</span>)</div><div class="line">        <span class="built_in">CFRelease</span>(type);</div><div class="line">    <span class="comment">// 这里需要用到MIMEType</span></div><div class="line">    <span class="built_in">NSURLResponse</span> *response = [[<span class="built_in">NSURLResponse</span> alloc] initWithURL:<span class="keyword">super</span>.request.URL</div><div class="line">                                                        MIMEType:mimeType</div><div class="line">                                           expectedContentLength:<span class="number">-1</span></div><div class="line">                                                textEncodingName:<span class="literal">nil</span>];</div><div class="line">    </div><div class="line">    <span class="built_in">NSData</span> *data = [<span class="built_in">NSData</span> dataWithContentsOfFile:path];<span class="comment">//加载本地资源</span></div><div class="line">    [<span class="keyword">self</span> sendResponseWithResponseCode:<span class="number">200</span> data:data mimeType:mimeType];</div><div class="line">    <span class="comment">//硬编码 开始嵌入本地资源到web中</span></div><div class="line">    </div><div class="line">    [[<span class="keyword">self</span> client] URLProtocol:<span class="keyword">self</span> didReceiveResponse:response cacheStoragePolicy:<span class="built_in">NSURLCacheStorageNotAllowed</span>];</div><div class="line">    [[<span class="keyword">self</span> client] URLProtocol:<span class="keyword">self</span> didLoadData:data];</div><div class="line">    [[<span class="keyword">self</span> client] URLProtocolDidFinishLoading:<span class="keyword">self</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里使用之前要注册一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[NSURLProtocol registerClass:[CDVURLProtocol class]];</div><div class="line">TestViewController *test = [[TestViewController alloc]init];</div><div class="line">test.wwwFolderName = @&quot;&quot;;</div><div class="line">test.startPage = @&quot;http://localhost/www/index.html&quot;;</div></pre></td></tr></table></figure></p>
+<p>把按照cordova官网教程做的demo中，插件拖进来，注意这里，一定要选择Create folder references<br>工程中显示蓝色文件夹，在cordova_plugins.js中，自己设置导入的插件目录，差不多就这样了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nimalaya.com/2018/05/31/cordova加载服务器H5页面，js放本地/" data-id="cjhu7xlaw0000rwbwl6uvgsfl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova-服务器H5-js本地/">cordova 服务器H5 js本地</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Cordova iOS使用心得（爬坑） " class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/29/Cordova iOS使用心得（爬坑） /" class="article-date">
@@ -407,7 +448,7 @@ self.label4Title.textColor = textColor;
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonmodel-系统关键词/">jsonmodel 系统关键词</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statusBar/">statusBar</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova-服务器H5-js本地/">cordova 服务器H5 js本地</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonmodel-系统关键词/">jsonmodel 系统关键词</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statusBar/">statusBar</a></li></ul>
     </div>
   </div>
 
@@ -417,7 +458,7 @@ self.label4Title.textColor = textColor;
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/jsonmodel-系统关键词/" style="font-size: 10px;">jsonmodel 系统关键词</a> <a href="/tags/statusBar/" style="font-size: 10px;">statusBar</a>
+      <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/cordova-服务器H5-js本地/" style="font-size: 10px;">cordova 服务器H5 js本地</a> <a href="/tags/jsonmodel-系统关键词/" style="font-size: 10px;">jsonmodel 系统关键词</a> <a href="/tags/statusBar/" style="font-size: 10px;">statusBar</a>
     </div>
   </div>
 
@@ -439,6 +480,10 @@ self.label4Title.textColor = textColor;
       <ul>
         
           <li>
+            <a href="/2018/05/31/cordova加载服务器H5页面，js放本地/">cordova加载服务器H5页面，js放本地</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/29/Cordova iOS使用心得（爬坑） /">Cordova iOS使用心得（爬坑）</a>
           </li>
         
@@ -452,10 +497,6 @@ self.label4Title.textColor = textColor;
         
           <li>
             <a href="/2017/09/01/webView打开https,不验证证书/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/30/AFNetWork支持https，不验证证书/">(no title)</a>
           </li>
         
       </ul>
