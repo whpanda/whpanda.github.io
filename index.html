@@ -69,45 +69,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-SDK开发报错" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/02/05/SDK开发报错/" class="article-date">
-  <time datetime="2021-02-05T02:20:42.000Z" itemprop="datePublished">2021-02-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/05/SDK开发报错/">开发SDK编译报错</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天做SDK开发的时候碰到一个非常奇怪的问题，真机demo正常，模拟器一直报错bundle format unrecognized, invalid, or unsuitable，最后发现<img src="/.com//02/05/SDK开发报错/F7C8555A-C6A4-42E3-A4DA-C93E48664F0A.png" alt="F7C8555A-C6A4-42E3-A4DA-C93E48664F0A" title="F7C8555A-C6A4-42E3-A4DA-C93E48664F0A">在Assets目录下面二级目录有个文件夹名称为Resources，猜测可能是关键词之类的吧，改名称就解决了，特此记录一下</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2021/02/05/SDK开发报错/" data-id="ckkrtztzz000235e6mdbs007w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发SDK-bundle-format-unrecognized-invalid-or-unsuitable/">开发SDK,bundle format unrecognized, invalid, or unsuitable</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-开发SDK编译报错" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/02/05/开发SDK编译报错/" class="article-date">
@@ -135,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2021/02/05/开发SDK编译报错/" data-id="ckkrtzu04000835e6ykx4coqx" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2021/02/05/开发SDK编译报错/" data-id="ckn79go74000dc3e6glsj6wbe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发SDK-bundle-format-unrecognized-invalid-or-unsuitable/">开发SDK,bundle format unrecognized, invalid, or unsuitable</a></li></ul>
@@ -176,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2018/05/31/cordova加载服务器H5页面，js放本地/" data-id="ckkrtzu02000535e6swtzrm3u" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2018/05/31/cordova加载服务器H5页面，js放本地/" data-id="ckn79go6x0004c3e6o36kzomd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova-服务器H5-js本地/">cordova 服务器H5 js本地</a></li></ul>
@@ -221,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2018/05/29/Cordova iOS使用心得（爬坑） /" data-id="ckkrtztzx000135e61au2kw50" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2018/05/29/Cordova iOS使用心得（爬坑） /" data-id="ckn79go6u0002c3e62f3gh0de" class="article-share-link">Share</a>
       
       
     </footer>
@@ -253,12 +214,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">+(JSONKeyMapper)keyMapper&#123;</div><div class="line"><span class="keyword">return</span> [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&#123;<span class="string">@"自己设置的model属性"</span>:<span class="string">@"服务器返回的model属性"</span>&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>服务器中返回数据中使用jsonModel解析转化为模型时，如遇到跟系统关键字或系统自有属性冲突，例如id等使用jsonmodel中的JSONKeyMapper类方法<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">+(JSONKeyMapper *)keyMapper&#123;</div><div class="line"><span class="keyword">return</span> [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@&#123;<span class="string">@"自己设置的model属性"</span>:<span class="string">@"服务器返回的model属性"</span>&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2018/05/29/jsonmodel中出现系统关键词处理/" data-id="ckkrtzu03000635e6voaiw2xl" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2018/05/29/jsonmodel中出现系统关键词处理/" data-id="ckn79go6t0001c3e60f9m9d7h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonmodel-系统关键词/">jsonmodel 系统关键词</a></li></ul>
@@ -290,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2017/09/12/swift automaticallyAdjustsScrollViewInsets空白间距问题/" data-id="ckkrtzu06000c35e6ryoukcjz" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2017/09/12/swift automaticallyAdjustsScrollViewInsets空白间距问题/" data-id="ckn79go730009c3e62zs144x6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2017/09/01/webView打开https,不验证证书/" data-id="ckkrtzu07000f35e66s5kpjnn" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2017/09/01/webView打开https,不验证证书/" data-id="ckn79go74000ac3e6vixpe16s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -351,7 +312,7 @@ _sharedInstance.securityPolicy = securityPolicy;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2017/08/30/AFNetWork支持https，不验证证书/" data-id="ckkrtztzu000035e6hw6o7jh7" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2017/08/30/AFNetWork支持https，不验证证书/" data-id="ckn79go6q0000c3e6ke0ofjdc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -388,7 +349,7 @@ _sharedInstance.securityPolicy = securityPolicy;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="ckkrtzu00000335e6xtb8j815" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/06/15/UITableView顶部有一块空白区域/" data-id="ckn79go710005c3e663uavit2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UITableView/">UITableView</a></li></ul>
@@ -465,7 +426,7 @@ self.label4Title.textColor = textColor;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="ckkrtzu05000a35e6u1shgd6a" class="article-share-link">Share</a>
+      <a data-url="http://nimalaya.com/2016/05/27/statusBar状态栏消息滚动显示控件/" data-id="ckn79go720007c3e6gzvz3rsa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/statusBar/">statusBar</a></li></ul>
@@ -477,11 +438,44 @@ self.label4Title.textColor = textColor;
 
 
   
+    <article id="post-我的第一篇博客终于弄好了" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/24/我的第一篇博客终于弄好了/" class="article-date">
+  <time datetime="2016-05-24T09:02:09.000Z" itemprop="datePublished">2016-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/24/我的第一篇博客终于弄好了/">我的第一篇博客终于弄好了</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一篇博客纪念一下，弄了好几天，用hexo 和 github 做的，只需要购买域名，不需要买服务器，直接用github的就可以了，都是静态界面，后台和数据库都是大材小用，用这一篇测试发布！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nimalaya.com/2016/05/24/我的第一篇博客终于弄好了/" data-id="ckn79go75000ec3e679u4ii8y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
 
 
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
+  
+
 </section>
         
           <aside id="sidebar">
@@ -503,7 +497,7 @@ self.label4Title.textColor = textColor;
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/cordova-服务器H5-js本地/" style="font-size: 10px;">cordova 服务器H5 js本地</a> <a href="/tags/jsonmodel-系统关键词/" style="font-size: 10px;">jsonmodel 系统关键词</a> <a href="/tags/statusBar/" style="font-size: 10px;">statusBar</a> <a href="/tags/开发SDK-bundle-format-unrecognized-invalid-or-unsuitable/" style="font-size: 20px;">开发SDK,bundle format unrecognized, invalid, or unsuitable</a>
+      <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/cordova-服务器H5-js本地/" style="font-size: 10px;">cordova 服务器H5 js本地</a> <a href="/tags/jsonmodel-系统关键词/" style="font-size: 10px;">jsonmodel 系统关键词</a> <a href="/tags/statusBar/" style="font-size: 10px;">statusBar</a> <a href="/tags/开发SDK-bundle-format-unrecognized-invalid-or-unsuitable/" style="font-size: 10px;">开发SDK,bundle format unrecognized, invalid, or unsuitable</a>
     </div>
   </div>
 
@@ -525,10 +519,6 @@ self.label4Title.textColor = textColor;
       <ul>
         
           <li>
-            <a href="/2021/02/05/SDK开发报错/">开发SDK编译报错</a>
-          </li>
-        
-          <li>
             <a href="/2021/02/05/开发SDK编译报错/">开发SDK编译报错</a>
           </li>
         
@@ -542,6 +532,10 @@ self.label4Title.textColor = textColor;
         
           <li>
             <a href="/2018/05/29/jsonmodel中出现系统关键词处理/">jsonmodel中出现系统关键词处理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/12/swift automaticallyAdjustsScrollViewInsets空白间距问题/">(no title)</a>
           </li>
         
       </ul>
